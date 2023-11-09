@@ -1,0 +1,137 @@
+.toggle {
+  z-index: 1000;
+  border-radius: 5px;
+}
+
+.toggle {
+  margin-top: 70px;
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle:hover {
+  background-color: #24618a;
+  transform: scale(1.2);
+}
+
+.card-wrapper:hover {
+  transform: rotateX(var(--rx)) rotateY(var(--ry));
+  translate: calc((var(--ratiox) - 0.5) * -5%) calc((var(--ratioy) - 0.5) * -5%);
+}
+
+.card-wrapper:hover > .highlight {
+  background: radial-gradient(
+    circle at var(--mx) var(--my),
+    rgba(255, 255, 255, 0.8) 10%,
+    rgba(255, 255, 255, 0.65) 20%,
+    rgba(0, 0, 0, 0.5) 90%
+  );
+  mix-blend-mode: overlay;
+}
+
+.card-wrapper-ura:hover {
+  transform: rotateX(var(--rux)) rotateY(var(--ruy));
+  translate: calc((var(--ratioux) - 0.5) * -5%)
+    calc((var(--ratiouy) - 0.5) * -5%);
+}
+
+.card-wrapper-ura:hover > .highlight {
+  background: radial-gradient(
+    circle at var(--mux) var(--muy),
+    rgba(255, 255, 255, 0.8) 10%,
+    rgba(255, 255, 255, 0.65) 20%,
+    rgba(0, 0, 0, 0.5) 90%
+  );
+  mix-blend-mode: overlay;
+}
+
+.color {
+  mix-blend-mode: color-dodge;
+  display: grid;
+}
+
+.card-wrapper:hover > .color {
+  background-image: url("./img/holo.jpeg"),
+    repeating-linear-gradient(
+      -33deg,
+      rgb(206, 42, 36) 6%,
+      rgb(157, 170, 223) 12%,
+      rgb(45, 153, 146) 18%,
+      rgb(29, 151, 36) 24%,
+      rgb(181, 64, 228) 30%,
+      rgb(206, 42, 36) 36%
+    ),
+    repeating-linear-gradient(
+      133deg,
+      rgba(14, 21, 46, 0.5) 0%,
+      hsl(180, 10%, 50%) 2.5%,
+      hsl(83, 50%, 35%) 5%,
+      hsl(180, 10%, 50%) 7.5%,
+      rgba(14, 21, 46, 0.5) 10%,
+      rgba(14, 21, 46, 0.5) 15%
+    ),
+    radial-gradient(
+      farthest-corner circle at var(--mx) var(--my),
+      rgba(6, 218, 255, 0.6) 0%,
+      rgba(38, 235, 127, 0.6) 25%,
+      rgba(155, 78, 228, 0.6) 50%,
+      rgba(228, 78, 90, 0.6) 75%
+    );
+  background-blend-mode: color-burn, screen, soft-light;
+  background-size: 60% 30%, 1100% 1100%, 600% 600%, 200% 200%;
+  background-position: center, 0% var(--posy), var(--posx) var(--posy),
+    var(--posx) var(--posy);
+  filter: brightness(calc((var(--hyp) * 0.3) + 0.5)) contrast(2.5) saturate(0.6);
+}
+
+.card-wrapper-ura:hover > .color {
+  background-blend-mode: color-burn, screen, soft-light;
+  background-size: 60% 30%, 1100% 1100%, 600% 600%, 200% 200%;
+  background-position: center, 0% var(--posuy), var(--posux) var(--pouy),
+    var(--posux) var(--posuy);
+  filter: brightness(calc((var(--huyp) * 0.3) + 0.5)) contrast(2.5)
+    saturate(0.6);
+}
+
+/*形を整える*/
+.card {
+  box-shadow: 0 10px 20px -5px #000;
+  height: 300px;
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-wrapper {
+  aspect-ratio: 0.716;
+  display: grid;
+  height: calc(100% - 32px);
+  max-width: 100%;
+  position: absolute;
+}
+
+.card-wrapper-ura {
+  aspect-ratio: 0.716;
+  display: none;
+  height: calc(100% - 32px);
+  max-width: 100%;
+  position: absolute;
+}
+
+/*真ん中に持ってきている*/
+body {
+  background-color: #212529;
+  display: grid;
+  height: calc(100vh - 32px);
+  margin: 0;
+  padding: 16px;
+  place-items: center;
+  position: relative;
+  width: calc(100% - 32px);
+}
