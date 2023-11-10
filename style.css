@@ -1,3 +1,7 @@
+.wrapper {
+  position: relative;
+}
+
 .toggle {
   z-index: 1000;
   border-radius: 5px;
@@ -136,6 +140,10 @@ body {
   width: calc(100% - 32px);
 }
 
+.arrow-wrapper {
+  display: none;
+}
+
 @media (max-width: 750px) {
   body {
     margin: 0 auto;
@@ -152,5 +160,18 @@ body {
   .toggle {
     top: 330px;
     position: absolute;
+  }
+  .arrow-wrapper {
+    font-size: 24px;
+    color: white;
+    top: 40px;
+    left: 0;
+    display: flex;
+    position: absolute;
+    gap: 20px;
+    flex-direction: column;
+  }
+  i {
+    transform: rotate(135deg) scale(1, 1);
   }
 }
