@@ -135,3 +135,18 @@ body {
   position: relative;
   width: calc(100% - 32px);
 }
+
+@media (max-width: 750px) {
+  .card-wrapper,
+  .card-wrapper-ura {
+    left: 25px;
+  }
+  .card {
+    width: 90%;
+    height: 220px;
+  }
+  .toggle {
+    top: 250px;
+    position: absolute;
+  }
+}
